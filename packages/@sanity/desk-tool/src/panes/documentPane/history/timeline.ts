@@ -401,11 +401,11 @@ export class Timeline {
         current.endDocument = {draft, published}
       }
 
-      if (transaction.draftEffect) {
+      if (transaction.draftEffect && draft) {
         draft = applyPatch(draft, transaction.draftEffect.revert)
       }
 
-      if (transaction.publishedEffect) {
+      if (transaction.publishedEffect && published) {
         published = applyPatch(published, transaction.publishedEffect.revert)
       }
 
@@ -456,11 +456,11 @@ export class Timeline {
         const preDraftValue = draftValue
         const prePublishedValue = publishedValue
 
-        if (transaction.draftEffect) {
+        if (transaction.draftEffect && draftValue) {
           draftValue = incremental.applyPatch(draftValue, transaction.draftEffect.apply, meta)
         }
 
-        if (transaction.publishedEffect) {
+        if (transaction.publishedEffect && publishedValue) {
           publishedValue = incremental.applyPatch(
             publishedValue,
             transaction.publishedEffect.apply,
