@@ -1,4 +1,3 @@
-/* eslint-disable react/no-danger */
 import React from 'react'
 
 const styles = `
@@ -34,11 +33,14 @@ function DefaultRootComponent() {
       </p>
 
       <h2>How do I fix it?</h2>
+
       <p>
         In the <code>sanity.json</code> file of your Sanity configuration, add a plugin that
         fulfills the <code>part:@sanity/base/root</code> role. For instance:
       </p>
+
       <pre>
+        {/* eslint-disable-next-line react/no-danger */}
         <code dangerouslySetInnerHTML={{__html: exampleManifest}} />
       </pre>
 

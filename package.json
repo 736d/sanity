@@ -2,10 +2,12 @@
   "name": "sanity",
   "private": true,
   "workspaces": [
+    "examples/*",
     "packages/@sanity/*",
     "packages/*"
   ],
   "scripts": {
+    "dev": "lerna run --parallel --scope sanity-example-dev dev",
     "blog-studio": "(cd packages/blog-studio && SANITY_WATCH_MODE=monorepo yarn start)",
     "build": "lerna run build",
     "clean": "lerna run clean",
